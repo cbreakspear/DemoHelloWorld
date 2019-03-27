@@ -5,6 +5,7 @@
 // for more info, see: http://expressjs.com
 var express = require('express');
 var path = require('path');
+const PORT = process.env.PORT || 3000;
 
 var app = express();
 
@@ -25,9 +26,9 @@ app.get('/', testservices.landPage);
 
 // start server on the specified port and binding host
 //app.listen(appEnv.port, appEnv.bind, function() {
-app.listen(80,  function() {
+app.listen(PORT,  function() {
 
 	// print a message when the server starts listening
   //console.log("server starting on " + appEnv.url);
-  console.log("server starting on 80");
+  console.log("server starting on : " + PORT);
 });
