@@ -5,7 +5,7 @@
 // for more info, see: http://expressjs.com
 var express = require('express');
 var path = require('path');
-const PORT = process.env.PORT;
+const PORT = 80;
 
 var app = express();
 
