@@ -28,4 +28,4 @@ spec:
     app: demohelloworld
 
     # image: acrcb.azurecr.io/demo1:#{Build.BuildId}#
-    #test
+   
