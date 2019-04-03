@@ -1,30 +1,30 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: demo1
+  name: cbreakspear/demohelloworld
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: demo1
+        app: cbreakspear/demohelloworld
     spec:
       containers:
-      - name: demo1
+      - name: cbreakspear/demohelloworld
         image: acrcb.azurecr.io/cbreakspear/demohelloworld:#{Build.BuildId}#
         ports:
         - containerPort: 3000
-          name: demo3
+          name: cbreakspear/demohelloworld
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: demo1
+  name: cbreakspear/demohelloworld
 spec:
   type: LoadBalancer
   ports:
   - port: 80
   selector:
-    app: demo1
+    app: cbreakspear/demohelloworld
 
     # image: acrcb.azurecr.io/demo1:#{Build.BuildId}#
