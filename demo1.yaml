@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: demohelloworld
-        image: acrcb.azurecr.io/cbreakspear/demohelloworld:#{Build.BuildId}#
+        image: acrcb.azurecr.io/demohelloworld:#{Build.BuildId}#
         ports:
         - containerPort: 3000
           name: demohelloworld
