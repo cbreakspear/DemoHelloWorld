@@ -1,31 +1,31 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: demohelloworld
+  name: demo1
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: demohelloworld
+        app: demo1
     spec:
       containers:
-      - name: demohelloworld
-        image: acrcb.azurecr.io/demohelloworld:#{Build.BuildId}#
+      - name: demo1
+        image: acrcb.azurecr.io/demo1:v1
         ports:
         - containerPort: 3000
-          name: demohelloworld
+          name: demo1
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: demohelloworld
+  name: demo1
 spec:
   type: LoadBalancer
   ports:
   - port: 80
   selector:
-    app: demohelloworld
+    app: demo1
 
     # image: acrcb.azurecr.io/demo1:#{Build.BuildId}#
    
