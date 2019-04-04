@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: demo1
-        image: cbreakspear/TestApp
+        image: cbreakspear/testapp:60
         ports:
         - containerPort: 3000
           name: demo1
