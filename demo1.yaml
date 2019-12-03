@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: demo1
-        image: cbreakspear/testapp:#{Build.BuildId}#
+        image: acrcb.azurecr.io/demo1:#{Build.BuildId}#
         ports:
         - containerPort: 3000
           name: demo1
