@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: demo1
-        image: demo1:10
+        image: acrcb.azurecr.io/demo1:10
         ports:
         - containerPort: 3000
           name: demo1
