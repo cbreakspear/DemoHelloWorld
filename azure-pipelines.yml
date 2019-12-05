@@ -10,11 +10,14 @@ resources:
 
 variables:
   tag: '$(Build.BuildId)'
+  
+
 
 stages:
 - stage: Build
   displayName: Build image
   jobs:  
+
   - job: Build
     displayName: Build
     pool:
@@ -27,3 +30,14 @@ stages:
         dockerfile: 'dockerfile'
         tags: |
           $(tag)
+    - task: CopyFiles@2
+      inputs:
+        Contents: 'demo1.yaml'
+        TargetFolder: '$(build.artifactstagingdirectory)'      
+    - task: PublishPipelineArtifact@1
+      inputs:
+        targetPath: '$(Pipeline.Workspace)'
+        artifact: 'drop'
+        publishLocation: 'pipeline'
+
+          
