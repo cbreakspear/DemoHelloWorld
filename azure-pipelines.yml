@@ -10,6 +10,7 @@ resources:
 
 variables:
   tag: '$(Build.BuildId)'
+  
 
 stages:
 - stage: Build
@@ -27,3 +28,14 @@ stages:
         dockerfile: 'dockerfile'
         tags: |
           $(tag)
+          - task: PublishBuildArtifacts@1
+            inputs:
+              PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+              ArtifactName: 'drop'
+              publishLocation: 'Container'
+              - task: CopyFiles@2
+                inputs:
+                  Contents: 'demo1.yaml'
+                  TargetFolder: 'drop'
+                  OverWrite: true
+          
